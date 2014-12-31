@@ -139,6 +139,7 @@ public class LeadBoltPlugin implements IPlugin {
 		mActivity = activity;
 		String leadBoltPackage = "LEADBOLT_PACKAGE";
 		PackageManager manager = activity.getPackageManager();
+		this.ad = new AdController(mActivity, interstitialId, new PluginDelegate());
 		try {
 			Bundle meta = manager.getApplicationInfo(activity.getPackageName(), PackageManager.GET_META_DATA).metaData;
 			if (meta != null) {
